@@ -37,9 +37,9 @@ namespace Kasa
         double suma = 0;
 
         // Inicjalizacaja pól wartosci VAT
-        float vat_A = 0;
-        float vat_B = 0;
-        float vat_C = 0;
+        public float vat_A = 0;
+        public float vat_B = 0;
+        public float vat_C = 0;
 
         // Wskaźnik Storno - do odejmowania produktów od rachunku
        public bool storno = false;
@@ -219,7 +219,6 @@ namespace Kasa
                     
                     // Zwraca kwotę VAT
                     return count_vat_for_category(product_price_sum, 5.00);
-                    break;
 
                 // Obliczenia dla stawki B
                 case "B":
@@ -229,7 +228,6 @@ namespace Kasa
 
                     // Zwraca kwotę VAT
                     return count_vat_for_category(product_price_sum, 8.00);
-                    break;
 
                 // Obliczenia dla stawki AB
                 case "C":
@@ -239,11 +237,9 @@ namespace Kasa
 
                     // Zwraca kwotę VAT
                     return count_vat_for_category(product_price_sum, 23.00);
-                    break;
 
                 default:
                     return 0;
-                    break;
             }
         }
 

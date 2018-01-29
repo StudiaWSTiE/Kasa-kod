@@ -50,12 +50,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Paragon";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Liberation Mono", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBox1.Location = new System.Drawing.Point(3, 14);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -63,6 +64,7 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.Click += new System.EventHandler(this.richTextBox1_Click);
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // textBox1
             // 
@@ -76,6 +78,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox2
             // 
@@ -100,7 +103,7 @@
             this.btnCe.TabIndex = 20;
             this.btnCe.Text = "CE";
             this.btnCe.UseVisualStyleBackColor = false;
-            this.btnCe.Click += new System.EventHandler(this.btnCe_Click);
+            this.btnCe.Click += new System.EventHandler(this.BtnCe_Click);
             // 
             // btnStorno
             // 
@@ -113,7 +116,7 @@
             this.btnStorno.TabIndex = 19;
             this.btnStorno.Text = "RET";
             this.btnStorno.UseVisualStyleBackColor = false;
-            this.btnStorno.Click += new System.EventHandler(this.btnStorno_Click);
+            this.btnStorno.Click += new System.EventHandler(this.BtnStorno_Click);
             // 
             // btnSuma
             // 
@@ -126,7 +129,7 @@
             this.btnSuma.TabIndex = 18;
             this.btnSuma.Text = "SUMA";
             this.btnSuma.UseVisualStyleBackColor = false;
-            this.btnSuma.Click += new System.EventHandler(this.btnSuma_Click);
+            this.btnSuma.Click += new System.EventHandler(this.BtnSuma_Click);
             // 
             // textBox2
             // 
@@ -136,7 +139,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(301, 20);
             this.textBox2.TabIndex = 0;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // Form1
             // 
@@ -149,6 +152,7 @@
             this.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Name = "Form1";
             this.Text = "eKasa RFID";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -165,6 +169,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnStorno;
+
         private System.Windows.Forms.Button btnSuma;
         private System.Windows.Forms.Button btnCe;
         private System.Windows.Forms.TextBox textBox2;

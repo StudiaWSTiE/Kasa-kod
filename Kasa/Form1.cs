@@ -23,7 +23,7 @@ namespace Kasa
             trans = new Transakcja();
 
             // Wypisanie nagłówka paragonu
-            print_header();
+            Print_header();
         }
 
         // Funkcja obsługi wywołania aktualizacji tekstu w oknie ceny
@@ -55,7 +55,7 @@ namespace Kasa
         }
 
         // Funkcja zamykająca paragon
-        private void btnSuma_Click(object sender, EventArgs e)
+        private void BtnSuma_Click(object sender, EventArgs e)
         {
             if (!need_ce)
             { 
@@ -114,7 +114,7 @@ namespace Kasa
         }
 
         // Funkcja usuwająca ostatnią pozycję na liscie zakupów
-        private void btnStorno_Click(object sender, EventArgs e)
+        private void BtnStorno_Click(object sender, EventArgs e)
         {
             // Ustawianie flagi
             this.trans.storno = true;
@@ -124,7 +124,7 @@ namespace Kasa
         }
 
         // Funkcja wypisująca nagłówek paragonu
-        private void print_header()
+        private void Print_header()
         {
             // Odczyt ostatniego numeru paragonu
             string paragon_id = trans.get_last_paragon_id();
@@ -146,13 +146,13 @@ namespace Kasa
         }
 
         // Funkcja kasująca całą listę zakupów
-        private void btnCe_Click(object sender, EventArgs e)
+        private void BtnCe_Click(object sender, EventArgs e)
         {
             // Kasowanie listy zakupów w obiekcie transakcji
             trans.remove_all_positions();
 
             // Wypisanie nagłówka paragonu
-            print_header();
+            Print_header();
 
             // Reset flagi wymuszenia kasowania transakcji
             need_ce = false;
@@ -161,7 +161,7 @@ namespace Kasa
             this.textBox2.Focus();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             // Kontrola czy wprowadzono cyfry & Blokada do momentu resetu transakcji
             if (this.textBox2.Text.All(char.IsDigit) & (!need_ce))
@@ -220,6 +220,26 @@ namespace Kasa
         {
             // Ustawienie focusa na polu skanowania kodów RFID
             this.textBox2.Focus();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
