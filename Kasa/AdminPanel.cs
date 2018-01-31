@@ -12,7 +12,7 @@ namespace Kasa
         public AdminPanel()
         {
             InitializeComponent();
-            this.db.Open();
+            db.Open();
             button1_Click(this, null);
         }
 
@@ -21,7 +21,7 @@ namespace Kasa
         {
             var count = 0;
             string SQLcheck = "select * from Administrator" ;
-            SqliteCommand cmd = new SqliteCommand(SQLcheck, this.db);
+            SqliteCommand cmd = new SqliteCommand(SQLcheck, db);
 
 
             SqliteDataReader rdr = cmd.ExecuteReader();
@@ -37,7 +37,7 @@ namespace Kasa
                 string sql = "select * from Administrator WHERE Name='" + textBox1.Text + "' AND Password ='" +textBox2.Text + "'";
 
 
-                SqliteCommand command = new SqliteCommand(sql, this.db);
+                SqliteCommand command = new SqliteCommand(sql, db);
 
 
                 SqliteDataReader reader = command.ExecuteReader();
@@ -59,13 +59,11 @@ namespace Kasa
             }
             else if (count == 0)
             {
-                MessageBox.Show("W systemie nie istnieje konto administratora - nastąpi przekierowanie do formularza rejestracyjnego", "Tworzymy konto");
+                MessageBox.Show("W systemie nie istnieje konto administratora - nastąpi przekierowanie do formularza rejestracyjnego", "Pierwsze logowania - konieczna rejestracja");
                 AddAdmin a = new AddAdmin();
                 a.ShowDialog();
                 return;
-            }
-            
-           this.db.Close(); 
+            }         
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)

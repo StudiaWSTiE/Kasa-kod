@@ -30,11 +30,12 @@ namespace Kasa
                     {
                         string sql = "INSERT INTO Administrator (Name, Password) values ('" + textBox1.Text + "','" + textBox2.Text + "');";
 
-                        // Umieszczenie zapytania SQL w komedzie SQLite
-                        SqliteCommand command = new SqliteCommand(sql, this.db);
+                        // Umieszczenie polecenia SQL w komedzie SQLite
+                        SqliteCommand command = new SqliteCommand(sql, db);
 
-                        // Wykonanie zapytania na bazie danych
+                        // Wykonanie polecenia w bazie danych
                         command.ExecuteReader();
+                        MessageBox.Show("Pomyślnie dodano administratora systemu", "Dodawanie administatora");
                     }
                     else
                     {
@@ -50,9 +51,7 @@ namespace Kasa
             else
             {
                 MessageBox.Show("Nazwa użytkownika nie może być pusta lub wypełniona spacjami", "Niepoprawna nazwa użytkownika");
-            }
-
-            MessageBox.Show("Pomyślnie dodano administratora systemu", "Dodawanie administatora");
+            }          
         }
     }
 }
