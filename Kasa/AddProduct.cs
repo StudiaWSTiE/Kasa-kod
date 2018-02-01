@@ -46,6 +46,54 @@ namespace Kasa
                 VATcat = "C";
             }
 
+            try
+            {
+                using (SqliteConnection db = new SqliteConnection("Filename = Magazyn.sqlite"))
+                {
+                    db.Open();
+                    string sqlCheck = "select * from Produkty WHERE RFID='" + RFID.Text + "'";
+                    using (SqliteCommand cmd = new SqliteCommand(sqlCheck, db))
+                    {
+                        using (SqliteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                MessageBox.Show("W bazie produktów jest już produkt o podanym tagu RFID", "Wykryto duplikat");
+                                RFID.Clear();
+                            }
+                            else
+                            {
+                               
+                                string sql = @"INSERT INTO Produkty (Name, RFID, Price, Unit, VAT) values (@name, @RFID, @price, @unit, @vat)";
+                                using (SqliteCommand command = new SqliteCommand(sql, db))
+                                {
+                                    
+                                    command.CommandText = sql;
+                                    command.Connection = db;
+                                    command.Parameters.Add(new SqliteParameter("@name", Nazwa.Text));
+                                    command.Parameters.Add(new SqliteParameter("@RFID", RFID.Text));
+                                    command.Parameters.Add(new SqliteParameter("@price", Cena.Text));
+                                    command.Parameters.Add(new SqliteParameter("@unit", Jednostka.Text));
+                                    command.Parameters.Add(new SqliteParameter("@vat", VATcat));
+                                    command.ExecuteNonQuery();
+                                    MessageBox.Show("Pomyślnie dodano produkt " + Nazwa.Text + " do bazy danych", "Dodano produkt");
+                                    
+                                }
+                            }
+                           
+                        }
+                        
+                    }
+                    db.Close();
+                }
+                
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+            /*
             using (SqliteConnection db = new SqliteConnection("Filename = Magazyn.sqlite"))
             {
                 try
@@ -83,7 +131,9 @@ namespace Kasa
                     Console.WriteLine(exception);
                     throw;
                 }
-            }
+            } */
+
+
           /*  string sqlCheck = "select * from Produkty WHERE RFID='" + RFID.Text + "'";
             SqliteCommand cmd = new SqliteCommand(sqlCheck, db);
             SqliteDataReader reader = cmd.ExecuteReader();
