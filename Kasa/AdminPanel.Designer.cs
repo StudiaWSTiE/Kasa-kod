@@ -99,8 +99,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "AdminPanel";
-            this.Text = "AdminPanel";
+            this.Text = "Panel logowania";
+            this.Load += new System.EventHandler(this.AdminPanel_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -120,8 +120,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "AddAdmin";
-            this.Text = "AddAdmin";
+            this.Text = "Rejestracja administratora";
+            this.Load += new System.EventHandler(this.AddAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

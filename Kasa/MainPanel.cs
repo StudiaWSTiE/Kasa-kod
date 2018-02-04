@@ -23,8 +23,8 @@ namespace Kasa
         {
 
             Form1 f = new Form1() ;
-            f.ShowDialog();
-        
+            f.Show();
+            Hide();
         }
 
         private void MainPanel_Load(object sender, EventArgs e)
@@ -35,9 +35,9 @@ namespace Kasa
         private void AdminPanel_Click(object sender, EventArgs e)
         {
             AdminPanel a = new AdminPanel();
-            a.ShowDialog();
-
-
+            a.Show();
+            Hide();
+            
         }
     }
 }

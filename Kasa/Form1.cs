@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Text;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Kasa
 {
@@ -91,22 +95,37 @@ namespace Kasa
                     richTextBox1.AppendText("   VAT C          " + vat_C.ToString() + "\n");
                 }
 
-                richTextBox1.AppendText("   Suma PTU:                  " + sum_PTU.ToString() + " zł\n");
+                richTextBox1.AppendText("   Suma PTU:                  " + sum_PTU.ToString() + " zl\n");
             
                 // Dopisanie linii separatora
                 richTextBox1.AppendText(" ---------------------------------------\n");
 
                 // Suma - należność od klienta
-                richTextBox1.AppendText("   SUMA:                      " + sum + " zł");
+                richTextBox1.AppendText("   SUMA:                      " + sum + " zl");
 
                 // Wypisanie sumy do okna cen
-                this.textBox1.Text = sum + " zł";
+                this.textBox1.Text = sum + " zl";
 
                 // Zapis paragonu do bazy danych
                 trans.save_paragon(sum, sum_PTU.ToString());
 
                 // Zablokowanie kolejnego skanowania do momentu wciśnięcia CE
                 need_ce = true;
+
+                // Pobranie nr ID paragonu w celu jego zapisu       
+
+                string ParagonId = trans.get_last_paragon_id();
+                int TransId = Convert.ToInt16(ParagonId);
+
+                // Zapis paragonu do pliku .PDF
+                Document doc = new Document();
+                var Font = FontFactory.GetFont(BaseFont.CP1257, BaseFont.TIMES_ROMAN);
+                PdfWriter.GetInstance(doc, new FileStream("../Paragony/" + TransId + "-" + DateTime.Now.ToShortDateString()+".pdf", FileMode.Create));
+                doc.Open();                
+                Paragraph p1 = new Paragraph(richTextBox1.Text, Font);
+                doc.Add(p1);
+                doc.Close();
+               
             }
 
             // Ustawienie focusa na polu skanowania kodów RFID
@@ -124,7 +143,7 @@ namespace Kasa
         }
 
         // Funkcja wypisująca nagłówek paragonu
-        private void Print_header()
+        public void Print_header()
         {
             // Odczyt ostatniego numeru paragonu
             string paragon_id = trans.get_last_paragon_id();
@@ -135,14 +154,14 @@ namespace Kasa
             richTextBox1.AppendText("\n");
             richTextBox1.AppendText(" ***************************************\n");
             richTextBox1.AppendText("            Sklep SuperSAM              \n");
-            richTextBox1.AppendText("    NIP: 245-245-34-25, ul.Słoneczna 5  \n");
+            richTextBox1.AppendText("    NIP: 245-245-34-25, ul.Studencka 1  \n");
             richTextBox1.AppendText("                 ***                    \n");
             richTextBox1.AppendText(" Data: " + DateTime.Now.ToShortDateString() + "           " + DateTime.Now.ToShortDateString().Replace(".", "") + "/" + _id.ToString() + "\n");
             richTextBox1.AppendText(" ***************************************\n");
             richTextBox1.AppendText("\n");
 
             // Skasowanie ostatniej ceny
-            textBox1.Text = "0,00 zł";
+            textBox1.Text = "0,00 zl";
         }
 
         // Funkcja kasująca całą listę zakupów
@@ -182,10 +201,10 @@ namespace Kasa
                         string nazwa = this.trans.get_name(rfid);
 
                         // Wypisanie ceny na ekran (okno ceny) 
-                        AppendTextBox(cena + " zł");
+                        AppendTextBox(cena + " zl");
 
                         // Wypisanie ceny i nazwy na ekran (okno paragonu)
-                        AppendRichTextBox("   " + nazwa + "1x\t" + cena + "\tzł\n");
+                        AppendRichTextBox("   " + nazwa + "1x\t" + cena + "\tzl\n");
 
                         // Kasowanie flagi storno
                         this.trans.storno = false;

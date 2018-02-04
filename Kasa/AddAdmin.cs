@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
 
@@ -31,9 +23,9 @@ namespace Kasa
                     string sql = "INSERT INTO Administrator (Name, Password) values ('" + textBox1.Text + "','" + textBox2.Text + "');";
                     using (SqliteCommand cmd = new SqliteCommand(sql, db))
                     {                                                
-                            if (textBox1 != null && !string.IsNullOrWhiteSpace(textBox1.Text))
+                            if (!string.IsNullOrWhiteSpace(textBox1?.Text))
                             {
-                                if (textBox2 != null && !string.IsNullOrWhiteSpace(textBox2.Text))
+                                if (!string.IsNullOrWhiteSpace(textBox2?.Text))
                                 {
                                     if (textBox2.Text == textBox3.Text)
                                     {
@@ -64,6 +56,11 @@ namespace Kasa
                 Console.WriteLine(exception);
                 throw;
             }          
+        }
+
+        private void AddAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

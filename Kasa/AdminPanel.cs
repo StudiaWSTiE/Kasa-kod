@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
 
@@ -46,22 +45,23 @@ namespace Kasa
                                         if (rdr.Read())
                                         {
                                             MessageBox.Show(textBox1.Text + ", zostałeś pomyślnie zalogowany", "Logowanie");
-                                            AddProduct a = new AddProduct();
-                                            a.ShowDialog();
-                                            this.Close();
+                                         
+                                            SelectPanel s = new SelectPanel();
                                            
-                                            return;
+                                            s.Show();
+
+                                            Close();
                                         }
                                         else
                                         {
                                             MessageBox.Show("Nie ma administratora o loginie " + textBox1.Text +" lub Twoje hasło jest niepoprawne", "Błąd logowania");
                                             textBox1.Clear();
-                                            textBox2.Clear();
-                                            
-                                           
+                                            textBox2.Clear();                                                                                       
                                         }
                                         
+                                       
                                     }
+                                  
                                 }
                             }
                             else if (count == 0)
@@ -72,27 +72,36 @@ namespace Kasa
                                 AddAdmin a = new AddAdmin();
                                
                                 a.ShowDialog();
-                                return;
+                                
                             }
                             
-                            
-                            
+                          
+                          
 
                         }
                         
+                        
                     }
-                   
                     
                 }
+                
             }
             catch (Exception exception)
             {
                 Console.WriteLine(exception);
                 throw;
-            }                 
+            }
+            
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void AdminPanel_Load_1(object sender, EventArgs e)
         {
 
         }

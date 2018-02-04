@@ -98,7 +98,7 @@ namespace Kasa
             string sql = "INSERT INTO Paragony (Suma, VAT, Date) values ('" + suma + "','" + vat +"','" + data + "');";
 
             // Umieszczenie zapytania SQL w komedzie SQLite
-            SqliteCommand command = new SqliteCommand(sql, this.db);
+            SqliteCommand command = new SqliteCommand(sql, db);
 
             // Wykonanie zapytania na bazie danych
             SqliteDataReader reader = command.ExecuteReader();
@@ -112,7 +112,7 @@ namespace Kasa
             string sql = "select * from Produkty where RFID like '%" + RFID + "%'";
 
             // Umieszczenie zapytania SQL w komedzie SQLite
-            SqliteCommand command = new SqliteCommand(sql, this.db);
+            SqliteCommand command = new SqliteCommand(sql, db);
 
             // Wykonanie zapytania na bazie danych
             SqliteDataReader reader = command.ExecuteReader();

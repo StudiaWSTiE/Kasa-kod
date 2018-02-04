@@ -66,12 +66,15 @@
             // 
             // MainPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.CustomerPanel);
             this.Controls.Add(this.kasaUHF);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MainPanel";
             this.Text = "Panel startowy";
             this.Load += new System.EventHandler(this.MainPanel_Load);
