@@ -96,14 +96,30 @@ namespace Kasa
                     VAT = "C";
                 }
 
-                if (!admin.SprawdzRFID(txtRFID.Text))
+                if (txtNazwa.Text != string.Empty
+                    && txtRFID.Text != string.Empty
+                    && txtCena.Text != string.Empty
+                    && txtJednostka.Text != string.Empty)
                 {
-                    if (admin.AktualizujProdukt(txtNazwa.Text, txtRFID.Text, txtCena.Text, txtJednostka.Text, VAT))
+                    if (!admin.SprawdzRFID(txtRFID.Text))
                     {
-                        MessageBox.Show("Pomyślnie zaaktualizowano produkt!", "Aktualizacja produktu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (admin.AktualizujProdukt(txtNazwa.Text, txtRFID.Text, txtCena.Text, txtJednostka.Text, VAT))
+                        {
+                            MessageBox.Show("Pomyślnie zaaktualizowano produkt!", "Aktualizacja produktu",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Wszystkie pola muszą być wypełnione!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    edit = false;
+                    btnRemove.Enabled = false;
+                    btnAdd.Enabled = true;
+                    btnEdit.Text = "Aktualizuj produkt";
+                }
+
                 ClearFields();
                 LoadData();
             }
@@ -210,6 +226,11 @@ namespace Kasa
                 }
             }
            
+        }
+
+        private void dataGridProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

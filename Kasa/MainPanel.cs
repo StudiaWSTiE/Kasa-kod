@@ -24,7 +24,7 @@ namespace Kasa
 
             Form1 f = new Form1() ;
             f.Show();
-            Hide();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void MainPanel_Load(object sender, EventArgs e)
@@ -36,8 +36,8 @@ namespace Kasa
         {
             AdminPanel a = new AdminPanel();
             a.Show();
-            Hide();
-            
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
 }

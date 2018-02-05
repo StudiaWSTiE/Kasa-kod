@@ -94,7 +94,7 @@
             // 
             // btnCe
             // 
-            this.btnCe.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCe.BackColor = System.Drawing.Color.Salmon;
             this.btnCe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCe.Location = new System.Drawing.Point(3, 61);
@@ -107,7 +107,7 @@
             // 
             // btnStorno
             // 
-            this.btnStorno.BackColor = System.Drawing.Color.LightCoral;
+            this.btnStorno.BackColor = System.Drawing.Color.Salmon;
             this.btnStorno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStorno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStorno.Location = new System.Drawing.Point(59, 61);
@@ -145,6 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(305, 448);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox2);
