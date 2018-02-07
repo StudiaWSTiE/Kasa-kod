@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kasa
 {
     public partial class MainPanel : Form
     {
-        
+        // Ekran powitalny aplikacji
         public MainPanel()
         {
             InitializeComponent();
@@ -21,10 +14,10 @@ namespace Kasa
 
         private void CustomerPanel_Click(object sender, EventArgs e)
         {
-
-            Form1 f = new Form1() ;
+            // Przekierowanie do panelu klienta i symulacji zakupów w sklepie
+            CustomerPanel f = new CustomerPanel() ;
             f.Show();
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void MainPanel_Load(object sender, EventArgs e)
@@ -34,9 +27,10 @@ namespace Kasa
 
         private void AdminPanel_Click(object sender, EventArgs e)
         {
+            // Przekierowanie do panelu administrtora, z którego można zarządzać bazą danych
             AdminPanel a = new AdminPanel();
             a.Show();
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
 
         }
     }

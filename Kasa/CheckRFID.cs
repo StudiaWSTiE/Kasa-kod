@@ -24,7 +24,7 @@ namespace Kasa
         }
 
         private void Button1_Click(object sender, EventArgs e)
-        {
+        {   // Kod sprawdza dostępność tagu RFID w bazie danych
             try
             {
                 using (SqliteConnection db = new SqliteConnection("Filename = Magazyn.sqlite"))

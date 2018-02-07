@@ -338,7 +338,6 @@ C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\pa
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.csprojResolveAssemblyReference.cache
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.exe.config
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.AdminPanel.resources
-C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.Form1.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.MainPanel.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.Properties.Resources.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.csproj.GenerateResource.Cache
@@ -354,3 +353,4 @@ C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\pa
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.ProductList.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.ParagonList.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.CheckRFID.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.CustomerPanel.resources

@@ -16,8 +16,8 @@ namespace Kasa
 
         
         private void button1_Click(object sender, EventArgs e)
-        {
-            
+        {   
+            // Kod sprawdza tabelę Administrator - spełnia zadanie prostego formularza logowania lub przekierowuje do panelu rejestracji
             try
             {
                 using (SqliteConnection db = new SqliteConnection("Filename=Magazyn.sqlite"))
@@ -44,7 +44,7 @@ namespace Kasa
                                     {
                                         if (rdr.Read())
                                         {
-                                            MessageBox.Show(textBox1.Text + ", zostałeś pomyślnie zalogowany", "Logowanie");
+                                            MessageBox.Show(textBox1.Text + ", zostałeś pomyślnie zalogowany", "Logowanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                          
                                             SelectPanel s = new SelectPanel();
                                            
@@ -54,7 +54,7 @@ namespace Kasa
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Nie ma administratora o loginie " + textBox1.Text +" lub Twoje hasło jest niepoprawne", "Błąd logowania");
+                                            MessageBox.Show("Nie ma administratora o loginie " + textBox1.Text +" lub Twoje hasło jest niepoprawne", "Błąd logowania",MessageBoxButtons.OK,MessageBoxIcon.Error);
                                             textBox1.Clear();
                                             textBox2.Clear();                                                                                       
                                         }
@@ -66,25 +66,13 @@ namespace Kasa
                             }
                             else if (count == 0)
                             {
-                                MessageBox.Show(
-                                    "W systemie nie istnieje konto administratora - nastąpi przekierowanie do formularza rejestracyjnego",
-                                    "Pierwsze logowania - konieczna rejestracja");
+                                MessageBox.Show("W systemie nie istnieje konto administratora - nastąpi przekierowanie do formularza rejestracyjnego", "Pierwsze logowania - konieczna rejestracja",MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 AddAdmin a = new AddAdmin();
-                               
-                                a.ShowDialog();
-                                
-                            }
-                            
-                          
-                          
-
-                        }
-                        
-                        
-                    }
-                    
-                }
-                
+                                a.ShowDialog();                             
+                            }                                                                                
+                        }                                                
+                    }                   
+                }                
             }
             catch (Exception exception)
             {
@@ -95,13 +83,6 @@ namespace Kasa
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void AdminPanel_Load_1(object sender, EventArgs e)
         {
 
         }

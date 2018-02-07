@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
-using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace Kasa
 {
@@ -64,7 +55,7 @@ namespace Kasa
                 }
             }
         }
-
+        // Edycja produktów
         bool edit = false;
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -74,14 +65,15 @@ namespace Kasa
                 edit = true;
                 btnRemove.Enabled = true;
                 btnAdd.Enabled = false;
-                btnEdit.Text = "Zapisz produkt";
+                btnEdit.Text = "Zapisz";
+                MessageBox.Show("W przypadku edycji tagu RFID usuń produkt, a następnie dodaj go ponownie!", "Edycja transpondera", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 edit = false;
                 btnRemove.Enabled = false;
                 btnAdd.Enabled = true;
-                btnEdit.Text = "Aktualizuj produkt";
+                btnEdit.Text = "Aktualizuj";
                 string VAT;
                 if (rb5.Checked)
                 {
@@ -94,8 +86,7 @@ namespace Kasa
                 else
                 {
                     VAT = "C";
-                }
-
+                }                
                 if (txtNazwa.Text != string.Empty
                     && txtRFID.Text != string.Empty
                     && txtCena.Text != string.Empty
@@ -178,7 +169,7 @@ namespace Kasa
             txtJednostka.Clear();
 
         }
-
+        // Zczytywanie wartości komórek z tabeli opisujących produkt do pól tekstowych aplikacji (przy aktywnej edycji)
         string nameIndex;
         private void dataGridProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -200,7 +191,7 @@ namespace Kasa
                 Console.WriteLine(exception.Message);
             }
         }
-
+        // Usuwanie produktu
         private void btnRemove_Click(object sender, EventArgs e)
         {
             admin = new Administracja();

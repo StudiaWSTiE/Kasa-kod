@@ -18,7 +18,7 @@ namespace Kasa
         }
 
         private SqliteCommand cmd;
-        // Załadowanie aktualnej tabeli paragonów
+        // Załadowanie aktualnej tabeli paragonów posortowanych od najnowszych
         private void LoadData()
         {
             using (SqliteConnection conn = new SqliteConnection("Filename=Magazyn.sqlite"))
