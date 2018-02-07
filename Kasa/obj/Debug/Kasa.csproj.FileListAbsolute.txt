@@ -337,9 +337,7 @@ C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\pa
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\bin\Debug\Microsoft.Data.Sqlite.xml
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.csprojResolveAssemblyReference.cache
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.exe.config
-C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.AddProduct.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.AdminPanel.resources
-C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.Form1.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.MainPanel.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.Properties.Resources.resources
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.csproj.GenerateResource.Cache
@@ -347,3 +345,12 @@ C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\pa
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.exe
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.pdb
 C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.AddAdmin.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\bin\Debug\nunit.framework.dll
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\bin\Debug\nunit.framework.xml
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\bin\Debug\itextsharp.dll
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\bin\Debug\itextsharp.xml
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.SelectPanel.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.ProductList.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.ParagonList.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.CheckRFID.resources
+C:\Users\Kubek\Desktop\Studia WSTiE\Praca inżynierska\programy\Kasa sklepowa\paczka\Kasa-kod\Kasa\obj\Debug\Kasa.CustomerPanel.resources
